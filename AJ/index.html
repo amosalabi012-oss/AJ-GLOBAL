@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="theme-color" content="#007BFF">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AJ Global">
+    <meta name="application-name" content="AJ Global Concept">
+    <meta name="msapplication-TileColor" content="#007BFF">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <meta name="description" content="Premium school uniforms and clothing tailored for educational excellence. Custom designs, bulk orders, and partnerships.">
+    <meta name="keywords" content="school uniforms, clothing, educational, AJ Global Concept">
+    <meta property="og:title" content="AJ Global Concept - School Uniforms">
+    <meta property="og:description" content="Premium school uniforms and clothing">
+    <meta property="og:type" content="business.business">
+    <meta name="format-detection" content="telephone=no">
+    <title>AJ Global Concept - Premium School Uniforms and Clothing</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23007BFF' width='192' height='192'/><text x='50%' y='50%' font-size='80' fill='white' text-anchor='middle' dy='.3em' font-weight='bold' font-family='Arial'>AJ</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23007BFF' width='180' height='180' rx='40'/><text x='50%' y='50%' font-size='90' fill='white' text-anchor='middle' dy='.3em' font-weight='bold' font-family='Arial'>AJ</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================================================
+           1. ROOT VARIABLES & RESET
+           ========================================================================== */
+        :root {
+            --primary-blue: #007BFF;
+            --secondary-blue: #0056b3;
+            --success-green: #28a745;
+            --error-red: #dc3545;
+            --light-gray: #f8f9fa;
+            --accent-gray: #e9ecef;
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+            --shadow-sm: 0 4px 15px rgba(0,0,0,0.1);
+            --shadow-md: 0 8px 25px rgba(0,0,0,0.15);
+            --transition-base: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            background: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+            width: 100%;
+            height: 100%;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ==========================================================================
+           2. ACCESSIBILITY & SKIP LINK
+           ========================================================================== */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 8px;
+            z-index: 10000;
+            border-radius: 0 0 4px 4px;
+            transition: top 0.3s;
+        }
+        .skip-link:focus { top: 0; }
+
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 3px solid #ffbf00;
+            outline-offset: 2px;
+        }
+
+        /* ==========================================================================
+           3. HEADER & NAVIGATION
+           ========================================================================== */
+        header {
+            background: var(--primary-blue);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: var(--secondary-blue);
+            box-shadow: var(--shadow-md);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* ==========================================================================
+           4. PARALLAX & HERO
+           ========================================================================== */
+        .parallax {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.3);
+        }
+
+        .parallax-bg {
+            position: absolute;
+            inset: -10% 0;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.9);
+            will-change: transform;
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: rgba(0,0,0,0.35);
+            padding: 40px 20px;
+        }
+
+        #hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            margin: 0;
+        }
+
+        #hero p {
+            font-size: 28px;
+            margin-top: 15px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* ==========================================================================
+           5. SECTIONS & CONTENT
+           ========================================================================== */
+        section {
+            padding: 100px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #about, #services, #contact { background: var(--white); }
+        #products, #job-offers { background: var(--light-gray); }
+
+        h2 {
+            color: var(--primary-blue);
+            text-align: center;
+            font-size: 44px;
+            margin-bottom: 50px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-blue);
+            margin: 20px auto 0;
+        }
+
+        p {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .image-container {
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+        }
+
+        .image-container img:hover,
+        .image-container img:focus {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ==========================================================================
+           6. PRODUCT FILTERS & GRID
+           ========================================================================== */
+        .filter-section {
+            max-width: 1400px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            background: white;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            left: -100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .filter-btn:hover::before,
+        .filter-btn:focus::before { left: 100%; }
+
+        .filter-btn.active,
+        .filter-btn:hover,
+        .filter-btn:focus {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,123,255,0.3);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .product-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            visibility: hidden;
+        }
+
+        .product-item.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            visibility: visible;
+        }
+
+        .product-item.hide {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            visibility: hidden;
+        }
+
+        .product-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: transform 0.4s ease;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-item h3 {
+            color: var(--primary-blue);
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .product-item p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* ==========================================================================
+           7. ENHANCED INTERACTIVE FORMS
+           ========================================================================== */
+        .form-wrapper {
+            position: relative;
+        }
+
+        .form-message {
+            margin-bottom: 24px;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.4s ease;
+            min-height: 24px;
+        }
+
+        .form-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 14px;
+            left: 16px;
+            color: var(--text-muted);
+            font-size: 16px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 14px;
+            font-size: 13px;
+            color: var(--primary-blue);
+            background: white;
+            padding: 0 6px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--accent-gray);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group.success input,
+        .form-group.success textarea {
+            border-color: var(--success-green);
+            box-shadow: 0 0 0 3px rgba(40,167,69,0.15);
+        }
+
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: var(--error-red);
+            box-shadow: 0 0 0 3px rgba(220,53,69,0.15);
+        }
+
+        .error-text {
+            color: var(--error-red);
+            font-size: 14px;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .form-group.error .error-text {
+            display: block;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-group.success .input-icon.valid,
+        .form-group.error .input-icon.invalid {
+            opacity: 1;
+        }
+
+        .input-icon.valid { color: var(--success-green); }
+        .input-icon.invalid { color: var(--error-red); }
+
+        /* Submit button loading state */
+        .btn-loading {
+            pointer-events: none;
+            position: relative;
+            color: transparent !important;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -10px;
+            border: 3px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        form button {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        form button:hover,
+        form button:focus {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,123,255,0.25);
+        }
+
+        /* ==========================================================================
+           9. JOB OFFERS & CONTACT REDESIGN
+           ========================================================================== */
+        /* Job Offers Cards */
+        .job-offers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--success-green);
+        }
+
+        .job-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .job-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .job-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            font-size: 16px;
+        }
+
+        .job-card a {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            align-self: flex-start;
+        }
+
+        .job-card a:hover {
+            background: var(--secondary-blue);
+            transform: translateX(4px);
+        }
+
+        /* Form Layout Enhancement */
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section-title {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            position: absolute;
+            top: 14px;
+            left: 16px;
+            font-size: 16px;
+            color: var(--text-muted);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 14px;
+            font-size: 13px;
+            color: var(--primary-blue);
+            background: white;
+            padding: 0 6px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--accent-gray);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+
+        .form-group.success input,
+        .form-group.success textarea {
+            border-color: var(--success-green);
+            box-shadow: 0 0 0 3px rgba(40,167,69,0.15);
+        }
+
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: var(--error-red);
+            box-shadow: 0 0 0 3px rgba(220,53,69,0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-text {
+            color: var(--error-red);
+            font-size: 14px;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .form-group.error .error-text {
+            display: block;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-group.success .input-icon.valid,
+        .form-group.error .input-icon.invalid {
+            opacity: 1;
+        }
+
+        .input-icon.valid { color: var(--success-green); }
+        .input-icon.invalid { color: var(--error-red); }
+
+        form button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            min-height: 50px;
+            touch-action: manipulation;
+        }
+
+        form button:hover,
+        form button:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0,123,255,0.3);
+        }
+
+        form button:active {
+            transform: translateY(0);
+        }
+
+        /* Touch-friendly link sizes */
+        a, button, input[type="button"], input[type="submit"], input[type="reset"] {
+            min-height: 44px;
+            min-width: 44px;
+            touch-action: manipulation;
+        }
+
+        /* Enhanced select styling for mobile */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23007BFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        /* Prevent zoom on input focus on iOS */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            font-size: 16px;
+        }
+
+        .btn-loading {
+            pointer-events: none;
+            color: transparent !important;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -10px;
+            border: 3px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success Message */
+        .success-message {
+            background: var(--success-green);
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideDown 0.4s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==========================================================================
+           10. FOOTER & MEDIA QUERIES
+           ========================================================================== */
+        footer {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 992px) {
+            #hero h1 { font-size: 52px; }
+            #hero p  { font-size: 24px; }
+            h2       { font-size: 38px; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-blue);
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+            }
+            nav ul.open { max-height: 600px; }
+            nav ul li a { padding: 18px; display: block; text-align: center; }
+            section { padding: 80px 20px; }
+            .parallax { height: 80vh; }
+            .form-container { padding: 25px; }
+            .form-row { grid-template-columns: 1fr; }
+            .job-offers-container { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            #hero h1 { font-size: 36px; }
+            #hero p  { font-size: 18px; }
+            h2       { font-size: 30px; }
+            .product-item img { height: 220px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
+            .product-item { opacity: 1 !important; transform: none !important; visibility: visible !important; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header id="header" role="banner" aria-label="Main navigation">
+        <div class="container">
+            <a href="#hero" class="logo" aria-label="AJ Global Concept Home">AJ Global Concept</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+            <nav aria-label="Primary navigation">
+                <ul id="nav-menu" role="menubar">
+                    <li role="none"><a href="#hero" role="menuitem">Home</a></li>
+                    <li role="none"><a href="#about" role="menuitem">About</a></li>
+                    <li role="none"><a href="#products" role="menuitem">Products</a></li>
+                    <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                    <li role="none"><a href="#job-offers" role="menuitem">Job Offers</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <div id="hero" class="parallax" role="region" aria-label="Hero section">
+            <div class="parallax-bg" style="background-image: url('https://www.shutterstock.com/image-vector/collection-middle-high-school-uniform-260nw-2579169869.jpg');" aria-hidden="true"></div>
+            <div class="parallax-content">
+                <h1>Welcome to AJ Global Concept</h1>
+                <p>Your premier partner for high-quality school uniforms, clothing, and accessories tailored for educational excellence.</p>
+            </div>
+        </div>
+
+        <!-- About -->
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Us</h2>
+            <p>AJ Global Concept is a renowned manufacturer specializing in premium school uniforms and a wide array of clothing items. With a commitment to quality craftsmanship, innovative designs, and unparalleled customer service, we cater to schools, staff, and students worldwide.</p>
+            <div class="image-container">
+                <img src="https://images.squarespace-cdn.com/content/v1/5ed6e10fb011a123217ba702/354721da-3fb0-4b72-b68e-4906f98db741/PXL_20221020_091453580.jpg" alt="AJ Global Concept manufacturing team meticulously crafting high-quality school uniforms">
+            </div>
+        </section>
+
+        <!-- Products Parallax -->
+        <div class="parallax" role="region" aria-label="Products showcase">
+            <div class="parallax-bg" style="background-image: url('https://thumbs.dreamstime.com/b/school-uniform-collection-displayed-hangers-neatly-arranged-uniforms-showcasing-various-tops-bottoms-ties-full-shot-408517118.jpg');" aria-hidden="true"></div>
+            <div class="parallax-content">
+                <h2>Our Products</h2>
+                <p>Discover our extensive range of school uniforms and clothing, crafted with precision and style.</p>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <section id="products" aria-labelledby="products-heading">
+            <h2 id="products-heading">Our Products</h2>
+            <div class="filter-section" role="tablist" aria-label="Product category filters">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" tabindex="0">All</button>
+                <button class="filter-btn" data-filter="tops" role="tab" aria-selected="false" tabindex="0">Tops & Shirts</button>
+                <button class="filter-btn" data-filter="bottoms" role="tab" aria-selected="false" tabindex="0">Bottoms & Skirts</button>
+                <button class="filter-btn" data-filter="outerwear" role="tab" aria-selected="false" tabindex="0">Outerwear</button>
+                <button class="filter-btn" data-filter="sportswear" role="tab" aria-selected="false" tabindex="0">Sportswear</button>
+                <button class="filter-btn" data-filter="accessories" role="tab" aria-selected="false" tabindex="0">Accessories</button>
+                <button class="filter-btn" data-filter="staff" role="tab" aria-selected="false" tabindex="0">Staff Uniforms</button>
+            </div>
+            <div class="product-grid" role="list" aria-label="Product gallery">
+                <!-- Tops & Shirts -->
+                <div class="product-item show" data-category="tops">
+                    <img src="https://m.media-amazon.com/images/I/71586O4TNQL.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg" alt="Classic white school uniform shirt with collar and buttons">
+                    <h3>School Uniform Shirt</h3>
+                    <p>Comfortable and durable shirts for everyday school wear.</p>
+                </div>
+                <!-- Bottoms -->
+                <div class="product-item show" data-category="bottoms">
+                    <img src="https://www.beausuniforms.com/cdn/shop/products/khakiskirt_2048x.png?v=1593470780" alt="Pleated khaki school uniform skirt">
+                    <h3>School Uniform Skirt</h3>
+                    <p>Stylish skirts designed for comfort and mobility.</p>
+                </div>
+                <div class="product-item show" data-category="bottoms">
+                    <img src="https://cdn.shoplightspeed.com/shops/641257/files/27588980/300x250x2/uniform-a-youth-pull-on-pants-navy.jpg" alt="Navy blue school uniform pants">
+                    <h3>School Uniform Pants</h3>
+                    <p>Practical pants suitable for all school activities.</p>
+                </div>
+                <!-- Outerwear -->
+                <div class="product-item show" data-category="outerwear">
+                    <img src="https://m.media-amazon.com/images/I/61XnlCMSf3L._AC_UY1000_.jpg" alt="Tailored navy school uniform blazer">
+                    <h3>Blazers</h3>
+                    <p>Professional blazers for a polished appearance.</p>
+                </div>
+                <div class="product-item show" data-category="outerwear">
+                    <img src="http://skobels.com/cdn/shop/products/Asset1ST.VILLEnavycardigan_6ad4aaa3-ede8-40d6-b367-09b08bedbc3e.png?v=1656366172" alt="Navy school cardigan jumper">
+                    <h3>Cardigans/Jumpers</h3>
+                    <p>Warm and cozy layers for cooler days.</p>
+                </div>
+                <!-- Accessories -->
+                <div class="product-item show" data-category="accessories">
+                    <img src="https://ichef.bbci.co.uk/ace/standard/2048/cpsprodpb/2333/live/7cd23360-80d3-11ef-875f-61935c981968.jpg" alt="School uniform socks in various colors">
+                    <h3>Socks</h3>
+                    <p>Comfortable socks to match any uniform.</p>
+                </div>
+                <div class="product-item show" data-category="accessories">
+                    <img src="https://m.media-amazon.com/images/I/81ceFm7SM8S._AC_UY1000_.jpg" alt="School uniform belt">
+                    <h3>Belt</h3>
+                    <p>Durable belts to secure the perfect fit.</p>
+                </div>
+                <div class="product-item show" data-category="accessories">
+                    <img src="https://hellonella.com/cdn/shop/products/custom_resized_1c280931-4340-4fa6-965d-0681130b0a43.png?v=1681533357" alt="Classic black school shoes">
+                    <h3>Shoes</h3>
+                    <p>Sturdy and comfortable footwear for daily use.</p>
+                </div>
+                <div class="product-item show" data-category="accessories">
+                    <img src="https://www.edukitinc.com/Media/Default/Images/School%20Supply%20Kit.jpg" alt="Branded school merchandise">
+                    <h3>Branded Items</h3>
+                    <p>Custom-branded merchandise for school pride.</p>
+                </div>
+                <div class="product-item show" data-category="accessories">
+                    <img src="https://i.ytimg.com/vi/VH4cHqJjkKA/maxresdefault.jpg" alt="Durable school backpack">
+                    <h3>School Bags</h3>
+                    <p>Spacious and ergonomic bags for students.</p>
+                </div>
+                <!-- Sportswear -->
+                <div class="product-item show" data-category="sportswear">
+                    <img src="https://p.globalsources.com/IMAGES/PDT/B6014601548/sportswear-school-uniform-tracksuitsweatsuit.jpg" alt="School tracksuit sportswear set">
+                    <h3>Tracksuits/Sportwear</h3>
+                    <p>High-performance sportswear for active students.</p>
+                </div>
+                <!-- Staff Uniforms -->
+                <div class="product-item show" data-category="staff">
+                    <img src="https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=3560794000905288016" alt="Professional school staff uniform set">
+                    <h3>Staff Uniforms</h3>
+                    <p>Custom uniforms for school staff and faculty.</p>
+                </div>
+                <!-- School Tie -->
+                <div class="product-item show" data-category="tops">
+                    <img src="https://m.media-amazon.com/images/I/81fZmvYtBVL._AC_UY1000_.jpg" alt="Striped school tie in blue and white">
+                    <h3>School Tie</h3>
+                    <p>Elegant ties to complete the uniform look.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" aria-labelledby="services-heading">
+            <h2 id="services-heading">Our Services</h2>
+            <p>We offer comprehensive solutions for schools and institutions, including:</p>
+            <ul style="max-width: 700px; margin: 0 auto 40px; text-align: left; font-size: 18px; line-height: 1.8;">
+                <li>Custom uniform design and consultation</li>
+                <li>Bulk manufacturing and production</li>
+                <li>Embroidery, screen printing, and branding</li>
+                <li>Selection of premium fabrics (cotton blends, polyester, etc.)</li>
+                <li>Fast and reliable delivery</li>
+                <li>After-sales support and minor alterations</li>
+                <li>Seasonal collections and special orders</li>
+            </ul>
+            <p>Get in touch to discuss your requirements — we deliver quality that lasts.</p>
+        </section>
+
+        <!-- Job Offers -->
+        <section id="job-offers" aria-labelledby="job-offers-heading">
+            <h2 id="job-offers-heading">School Job Offers & Requests</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 18px;">Schools and institutions can submit requests for custom uniform manufacturing, bulk orders, or collaborative projects. Choose your request type below:</p>
+            
+            <!-- Job Types Cards -->
+            <div class="job-offers-container">
+                <div class="job-card">
+                    <div class="icon">📋</div>
+                    <h3>Custom Uniforms</h3>
+                    <p>Design and manufacture custom uniforms tailored to your school's unique requirements and branding.</p>
+                    <a href="#job-form" class="scroll-to-form" data-type="custom">Submit Request</a>
+                </div>
+                <div class="job-card">
+                    <div class="icon">📦</div>
+                    <h3>Bulk Orders</h3>
+                    <p>Large-scale uniform orders for entire schools with competitive pricing and flexible delivery options.</p>
+                    <a href="#job-form" class="scroll-to-form" data-type="bulk">Submit Request</a>
+                </div>
+                <div class="job-card">
+                    <div class="icon">🤝</div>
+                    <h3>Partnerships</h3>
+                    <p>Explore long-term partnerships and collaborative opportunities with AJ Global Concept.</p>
+                    <a href="#job-form" class="scroll-to-form" data-type="partnership">Submit Request</a>
+                </div>
+            </div>
+
+            <!-- Job Submission Form -->
+            <div class="form-container" id="job-form">
+                <div class="success-message" id="job-success-msg">
+                    <strong>✓ Success!</strong> Your request has been submitted successfully. We'll contact you soon.
+                </div>
+                <form id="job-offers-form" aria-label="School job offer request form">
+                    <div class="form-section">
+                        <div class="form-section-title">School Information</div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="job-school-name" placeholder=" " required aria-required="true">
+                                <label for="job-school-name">School Name</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">School name is required</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="job-contact-person" placeholder=" " required aria-required="true">
+                                <label for="job-contact-person">Contact Person</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">Contact person name is required</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="job-email" placeholder=" " required aria-required="true">
+                                <label for="job-email">Email Address</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">Please enter a valid email</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="job-phone" placeholder=" " required aria-required="true">
+                                <label for="job-phone">Phone Number</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">Phone number is required</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title">Request Details</div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select id="job-type" placeholder=" " required aria-required="true" style="width: 100%; padding: 14px 16px; border: 2px solid var(--accent-gray); border-radius: 8px; font-size: 16px; font-family: 'Roboto', sans-serif;">
+                                    <option value="">Select Request Type</option>
+                                    <option value="custom">Custom Uniforms</option>
+                                    <option value="bulk">Bulk Orders</option>
+                                    <option value="partnership">Partnerships</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" id="job-quantity" placeholder=" " min="1" required aria-required="true">
+                                <label for="job-quantity">Estimated Quantity</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">Quantity is required</span>
+                            </div>
+                        </div>
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <textarea id="job-description" placeholder=" " rows="6" required aria-required="true"></textarea>
+                                <label for="job-description">Request Description / Requirements</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">Please describe your requirements</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit">Submit Request</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Us -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Us</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 18px;">Reach out for inquiries, custom orders, partnerships, or any questions about our services.</p>
+            
+            <div class="form-container">
+                <div class="success-message" id="contact-success-msg">
+                    <strong>✓ Success!</strong> Your message has been received. We'll get back to you shortly.
+                </div>
+                <form id="contact-form" aria-label="General contact form">
+                    <div class="form-section">
+                        <div class="form-section-title">Your Information</div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="contact-name" placeholder=" " required aria-required="true">
+                                <label for="contact-name">Full Name</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">Name is required</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="contact-email" placeholder=" " required aria-required="true">
+                                <label for="contact-email">Email Address</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">Valid email is required</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-title">Message</div>
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <select id="contact-subject" placeholder=" " required aria-required="true" style="width: 100%; padding: 14px 16px; border: 2px solid var(--accent-gray); border-radius: 8px; font-size: 16px; font-family: 'Roboto', sans-serif; margin-bottom: 25px;">
+                                    <option value="">Select Subject</option>
+                                    <option value="inquiry">General Inquiry</option>
+                                    <option value="custom-order">Custom Order</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="support">Support</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <textarea id="contact-message" placeholder=" " rows="6" required aria-required="true"></textarea>
+                                <label for="contact-message">Your Message</label>
+                                <span class="input-icon valid">✓</span>
+                                <span class="input-icon invalid">✕</span>
+                                <span class="error-text">Message is required</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>© 2026 AJ Global Concept. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Register Service Worker for offline support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed:', err));
+            });
+        }
+
+        // Request notification permission
+        if ('Notification' in window && Notification.permission === 'default') {
+            Notification.requestPermission();
+        }
+
+        // Prevent double-tap zoom
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent accidental text selection on long touch
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.closest('button, a, input, textarea, select')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            navMenu.classList.toggle('open');
+            menuToggle.textContent = expanded ? '☰' : '✖';
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.textContent = '☰';
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                target?.scrollIntoView({ behavior: 'smooth' });
+                target?.focus({ preventScroll: true });
+            });
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('header')?.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        // Parallax Effect (disabled on mobile for performance)
+        const parallaxSections = document.querySelectorAll('.parallax');
+        const isHighPerformanceDevice = () => {
+            return window.innerWidth >= 1024 || 
+                   (navigator.deviceMemory && navigator.deviceMemory >= 4);
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!isHighPerformanceDevice()) return;
+            const scrollY = window.pageYOffset;
+            parallaxSections.forEach(section => {
+                const bg = section.querySelector('.parallax-bg');
+                if (!bg) return;
+                const offset = section.offsetTop;
+                const yPos = -(scrollY - offset) * 0.5;
+                bg.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Section Fade-in Observer
+        const sectionObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            },
+            { threshold: 0.15 }
+        );
+        document.querySelectorAll('section').forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Product Filter Logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productItems = document.querySelectorAll('.product-item');
+        const filterProducts = (filterValue) => {
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            const activeBtn = [...filterButtons].find(btn => btn.dataset.filter === filterValue);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.setAttribute('aria-selected', 'true');
+                activeBtn.focus();
+            }
+            productItems.forEach(item => {
+                item.classList.remove('show');
+                item.classList.add('hide');
+            });
+            setTimeout(() => {
+                productItems.forEach((item, index) => {
+                    const matches = filterValue === 'all' || item.dataset.category === filterValue;
+                    if (matches) {
+                        setTimeout(() => {
+                            item.classList.remove('hide');
+                            item.classList.add('show');
+                        }, index * 80 + 50);
+                    }
+                });
+            }, 400);
+        };
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => filterProducts(button.dataset.filter));
+            button.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    filterProducts(button.dataset.filter);
+                }
+            });
+        });
+        filterProducts('all');
+
+        // Form Validation & Feedback System
+        const validateForm = (form) => {
+            let isValid = true;
+            const inputs = form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select');
+            
+            inputs.forEach(input => {
+                const formGroup = input.closest('.form-group');
+                if (!formGroup) return;
+
+                formGroup.classList.remove('success', 'error');
+
+                // Skip validation for select elements without proper values
+                if (input.tagName === 'SELECT') {
+                    if (input.value) {
+                        formGroup.classList.add('success');
+                    } else if (input.required) {
+                        formGroup.classList.add('error');
+                        isValid = false;
+                    }
+                    return;
+                }
+
+                const value = input.value.trim();
+                
+                if (!value) {
+                    if (input.required) {
+                        formGroup.classList.add('error');
+                        isValid = false;
+                    }
+                } else if (input.type === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (emailRegex.test(value)) {
+                        formGroup.classList.add('success');
+                    } else {
+                        formGroup.classList.add('error');
+                        isValid = false;
+                    }
+                } else if (input.type === 'tel') {
+                    const phoneRegex = /^[\d\-\s\+\(\)]+$/;
+                    if (phoneRegex.test(value) && value.replace(/\D/g, '').length >= 7) {
+                        formGroup.classList.add('success');
+                    } else {
+                        formGroup.classList.add('error');
+                        isValid = false;
+                    }
+                } else {
+                    formGroup.classList.add('success');
+                }
+            });
+
+            return isValid;
+        };
+
+        // Real-time validation
+        document.querySelectorAll('input, textarea, select').forEach(field => {
+            field.addEventListener('blur', () => {
+                const formGroup = field.closest('.form-group');
+                if (!formGroup) return;
+                formGroup.classList.remove('success', 'error');
+
+                if (field.tagName === 'SELECT') {
+                    if (field.value) {
+                        formGroup.classList.add('success');
+                    } else if (field.required) {
+                        formGroup.classList.add('error');
+                    }
+                    return;
+                }
+
+                const value = field.value.trim();
+                if (!value && field.required) {
+                    formGroup.classList.add('error');
+                } else if (value) {
+                    if (field.type === 'email') {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        formGroup.classList.add(emailRegex.test(value) ? 'success' : 'error');
+                    } else if (field.type === 'tel') {
+                        const phoneRegex = /^[\d\-\s\+\(\)]+$/;
+                        const isValid = phoneRegex.test(value) && value.replace(/\D/g, '').length >= 7;
+                        formGroup.classList.add(isValid ? 'success' : 'error');
+                    } else {
+                        formGroup.classList.add('success');
+                    }
+                }
+            });
+
+            field.addEventListener('input', () => {
+                const formGroup = field.closest('.form-group');
+                if (formGroup && formGroup.classList.contains('error')) {
+                    formGroup.classList.remove('error');
+                }
+            });
+        });
+
+        // Job Offers Form Submission
+        const jobOffersForm = document.getElementById('job-offers-form');
+        if (jobOffersForm) {
+            jobOffersForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                if (!validateForm(jobOffersForm)) {
+                    return;
+                }
+
+                const button = jobOffersForm.querySelector('button[type="submit"]');
+                button.classList.add('btn-loading');
+                button.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    button.classList.remove('btn-loading');
+                    button.disabled = false;
+
+                    const successMsg = document.getElementById('job-success-msg');
+                    successMsg.classList.add('show');
+
+                    jobOffersForm.reset();
+                    jobOffersForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('success', 'error'));
+
+                    setTimeout(() => {
+                        successMsg.classList.remove('show');
+                    }, 5000);
+                }, 1500);
+            });
+        }
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                if (!validateForm(contactForm)) {
+                    return;
+                }
+
+                const button = contactForm.querySelector('button[type="submit"]');
+                button.classList.add('btn-loading');
+                button.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    button.classList.remove('btn-loading');
+                    button.disabled = false;
+
+                    const successMsg = document.getElementById('contact-success-msg');
+                    successMsg.classList.add('show');
+
+                    contactForm.reset();
+                    contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('success', 'error'));
+
+                    setTimeout(() => {
+                        successMsg.classList.remove('show');
+                    }, 5000);
+                }, 1500);
+            });
+        }
+
+        // Scroll to form when clicking job type cards
+        document.querySelectorAll('.scroll-to-form').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const form = document.getElementById('job-form');
+                const jobTypeSelect = document.getElementById('job-type');
+                const selectedType = link.dataset.type;
+                
+                form.scrollIntoView({ behavior: 'smooth' });
+                if (jobTypeSelect) {
+                    jobTypeSelect.value = selectedType;
+                    jobTypeSelect.focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

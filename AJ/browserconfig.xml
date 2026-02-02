@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 70'&gt;&lt;rect fill='%23007BFF' width='70' height='70'/&gt;&lt;text x='50%' y='50%' font-size='40' fill='white' text-anchor='middle' dy='.3em' font-weight='bold'&gt;AJ&lt;/text&gt;&lt;/svg&gt;"/>
+            <square150x150logo src="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'&gt;&lt;rect fill='%23007BFF' width='150' height='150'/&gt;&lt;text x='50%' y='50%' font-size='80' fill='white' text-anchor='middle' dy='.3em' font-weight='bold'&gt;AJ&lt;/text&gt;&lt;/svg&gt;"/>
+            <wide310x150logo src="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 310 150'&gt;&lt;rect fill='%23007BFF' width='310' height='150'/&gt;&lt;text x='50%' y='50%' font-size='80' fill='white' text-anchor='middle' dy='.3em' font-weight='bold'&gt;AJ GLOBAL&lt;/text&gt;&lt;/svg&gt;"/>
+            <square310x310logo src="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 310 310'&gt;&lt;rect fill='%23007BFF' width='310' height='310'/&gt;&lt;text x='50%' y='50%' font-size='150' fill='white' text-anchor='middle' dy='.3em' font-weight='bold'&gt;AJ&lt;/text&gt;&lt;/svg&gt;"/>
+            <TileColor>#007BFF</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
