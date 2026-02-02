@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-title" content="AJ Global">
     <meta name="application-name" content="AJ Global Concept">
     <meta name="msapplication-TileColor" content="#007BFF">
-    <meta name="msapplication-config" content="browserconfig.xml">
+    <meta name="msapplication-config" content="/AJ-GLOBAL/browserconfig.xml">
     <meta name="description" content="Premium school uniforms and clothing tailored for educational excellence. Custom designs, bulk orders, and partnerships.">
     <meta name="keywords" content="school uniforms, clothing, educational, AJ Global Concept">
     <meta property="og:title" content="AJ Global Concept - School Uniforms">
@@ -18,7 +18,7 @@
     <meta property="og:type" content="business.business">
     <meta name="format-detection" content="telephone=no">
     <title>AJ Global Concept - Premium School Uniforms and Clothing</title>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/AJ-GLOBAL/manifest.json">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23007BFF' width='192' height='192'/><text x='50%' y='50%' font-size='80' fill='white' text-anchor='middle' dy='.3em' font-weight='bold' font-family='Arial'>AJ</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23007BFF' width='180' height='180' rx='40'/><text x='50%' y='50%' font-size='90' fill='white' text-anchor='middle' dy='.3em' font-weight='bold' font-family='Arial'>AJ</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -1210,9 +1210,9 @@
         // Register Service Worker for offline support
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('/AJ-GLOBAL/sw.js')
                     .then(registration => console.log('Service Worker registered'))
-                    .catch(err => console.log('Service Worker registration failed:', err));
+                    .catch(err => console.log('Service Worker registration failed (offline mode disabled):', err));
             });
         }
 
